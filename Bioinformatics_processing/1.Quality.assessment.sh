@@ -33,14 +33,7 @@ chmod +rwx ${PATHTOWGSSEQUENCES}/*.fastq.gz
 # Output path to save fastqc results
 OUTQC="/home/anandam/project/anandam/Genomics/1_fastqc/melpomene/fastqc/not_trimmed"
 
-# Load software: In CC clusters you don’t need to have the programs saved in 
-# our personal accounts. CC has several software available for all its users. 
-# We just need to load the module within our job. It is always good to check 
-# the availability of the software here and try to load in the terminal before 
-# send the job since somethings a software needs other programs to be load with
-# it.
-
-## Necessary to have fastqc/0.11.8
+## Necessary to have installed fastqc/0.11.8
 
 # Running FastQC using all WGS files (FastQC on multiple threads)
 startimer # Start timer
@@ -62,7 +55,9 @@ FASTQCPATH="/home/anandam/project/anandam/Genomics/1_fastqc/melpomene/fastqc/not
 # MultiQC ---------------------------------------------------------------------
 # Preparing multiQC to run 
 # After fastQC ran, you can combine the fastQC output in one report 
+
 ## Necessary to have python/3.8
+
 source ~/python_programs/python_multiqc/bin/activate
 multiqc --outdir ${MULTIQCPATH} ${FASTQCPATH}
 endtimer # End of timer
