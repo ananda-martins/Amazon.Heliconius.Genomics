@@ -4,10 +4,10 @@
 # December 12th, 2020 
 
 # Sometimes Illumina adapter sequences are still present in some reads because 
-# adapters can form adapter dimers and then one of them gets sequenced or if a DNA 
-# fragment is shorter than the read length, the sequencer continues to “read-through”
-# into the adapter at the end of the DNA fragment. Cutadapt is used to trim reads and
-# Illumina adapter sequences.
+# and can form adapter dimers or if a DNA fragment is shorter than the read 
+# length, the sequencer continues to “read-through” into the adapter at the end
+# of the DNA fragment. Trimmomatic is used to trim reads and Illumina adapter 
+# sequences.
 
 # Software: Trimmomatic
 
@@ -17,10 +17,10 @@
 ## Path to timer script - not mandatory, just if you want to check how long takes to run the analysis
 PATHTIMER="/home/anandam/project/anandam/Genomics"
 
-## Path to raw reads - melpomene
+## Path to raw reads
 PATHTOWGSSEQUENCES="/home/anandam/project/anandam/Genomics/00_data/raw_data/melpomene"
 
-## Path to save trimmed sequences - melpomene
+## Path to save trimmed sequences
 OUTTRIM="/home/anandam/project/anandam/Genomics/2_trim/melpomene/trimmed_seq"
 
 ## Path to trimmomatic
@@ -33,7 +33,9 @@ chmod +rwx ${PATHTOWGSSEQUENCES}/*_001.fastq.gz
 source ${PATHTIMER}/timer.sh
             
 # Base names - For samples with suffix R1.fastq.gz
+
 startimer
+
 for file in ${PATHTOWGSSEQUENCES}/*_R1_001.fastq.gz
 do
 printf "\n--------------------------------------------------------\n"
