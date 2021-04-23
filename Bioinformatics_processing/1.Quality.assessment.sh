@@ -14,6 +14,8 @@
 # Requirements:
 # Requires (but not needed if you want to) the "timer.sh" script to calculate the time taken to run analysis
 
+#!/bin/bash
+
 # Prepare variables
 
 # Path to timer (Using to check how long is going to run the analysis)
