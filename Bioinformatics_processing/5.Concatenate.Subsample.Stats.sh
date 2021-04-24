@@ -1,5 +1,6 @@
 ##########################################################################################
 # Created by Ananda Martins
+# Based on https://speciationgenomics.github.io
 # McGill University 
 # Update: Feb 14th, 2021 
 
